@@ -1,0 +1,29 @@
+{
+  "name": "sql-load",
+  "version": "0.0.0",
+  "description": "AMD plugin for loading SQL",
+  "main": "sql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iceddev/sql-load"
+  },
+  "keywords": [
+    "sql",
+    "amd",
+    "loader",
+    "plugin"
+  ],
+  "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "bd3c41b660817ff82cce50f01ccb9fbcb154a958",
+  "bugs": {
+    "url": "https://github.com/iceddev/sql-load/issues"
+  },
+  "dependencies": {
+    "text": "https://github.com/requirejs/text/archive/2.0.10.tar.gz"
+  }
+}
