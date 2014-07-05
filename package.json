@@ -1,8 +1,8 @@
 {
   "name": "sql-load",
   "version": "0.0.0",
-  "description": "AMD plugin for loading SQL",
-  "main": "sql.js",
+  "description": "Module for loading SQL",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +23,5 @@
   "bugs": {
     "url": "https://github.com/iceddev/sql-load/issues"
   },
-  "dependencies": {
-    "text": "https://github.com/requirejs/text/archive/2.0.10.tar.gz"
-  }
+  "dependencies": {}
 }
