@@ -27,7 +27,22 @@ var sqlLoad = require('sql-load');
 
 sqlLoad.config({
   basePath: __dirname + '/sql', // will load sql files from the sql/ directory inside current directory
-  extension: '.txt' // will load files will extension .txt if one isn't specified
+  ext: '.txt' // will load files will extension .txt if one isn't specified
 });
 
 var selectAll = sqlLoad('./selectAll'); // loaded __dirname + '/sql/selectAll.txt';
+```
+
+`basePath` defaults to the current module.
+
+`ext` defaults to `'.sql'`.
+
+If you need to load a sql file async (this is used in the AMD plugin).
+
+```js
+var sqlLoad = require('sql-load');
+
+sqlLoad.async('./selectAll', function(err, selectAll){
+  // selectAll is a string to use in a query
+});
+```
