@@ -23,5 +23,7 @@
   "bugs": {
     "url": "https://github.com/iceddev/sql-load/issues"
   },
-  "dependencies": {}
+  "dependencies": {
+    "relquire": "^0.4.1"
+  }
 }
