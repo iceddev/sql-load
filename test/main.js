@@ -54,8 +54,23 @@ describe('#config()', function () {
 });
 
 describe('#async()', function () {
-  it('loads a file from the base of project asynchronisly', function (done) {
+  it('asynchronisly loads a file without explicit ext', function (done) {
+    sqlload.async('./helloworld', function(err, sql) {
+      expect(sql).to.equal('select * from now();');
+      done(err);
+    });
+  });
+
+  it('asynchronisly loads a file from the base of project', function (done) {
     sqlload.async('./helloworld.sql', function(err, sql) {
+      expect(sql).to.equal('select * from now();');
+      done(err);
+    });
+  });
+
+  it('asynchronisly loads a file with an ext set in config.ext from the base of project', function (done) {
+    sqlload.config({ext: '.sql'});
+    sqlload.async('./helloworld', function(err, sql) {
       expect(sql).to.equal('select * from now();');
       done(err);
     });
