@@ -6,6 +6,7 @@
     var fs = require('fs');
     var path = require('path');
     var extend = require('util')._extend;
+    // var xtend = require('xtend');
     var findBase = require('relquire').findBase;
 
     var config = {
@@ -32,7 +33,6 @@
       basePath = findBase(basePath || config.basePath || module.parent.filename);
       ext = ext || path.extname(filename) || config.ext;
       filename = path.join(path.dirname(filename), path.basename(filename, ext) + ext);
-
       return path.resolve(basePath, filename);
     }
 

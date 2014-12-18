@@ -4,7 +4,7 @@
   "description": "Module for loading SQL",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test-cov"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   },
   "dependencies": {
     "relquire": "^0.4.1"
+  },
+  "devDependencies": {
+    "lab": "^5.1.0"
   }
 }

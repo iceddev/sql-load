@@ -40,13 +40,12 @@ describe('#config()', function () {
 
   // Only worked when the full path was included in basePath. 
   // When folders are included in the sqlload call it breaks
-  it.only('loads a file from config.basePath where file is in a sub-directory of new basePath'
+  it('loads a file from config.basePath where file is in a sub-directory of new basePath'
     , function (done) {
     var configObj = {
       basePath: __dirname + '/fixtures/',
       ext: '.txt'
     };
-    // console.log(configObj);
     sqlload.config(configObj);
     expect(sqlload('./sql/iced')).to.equal('select * from ICED now();');
     done();
@@ -54,11 +53,23 @@ describe('#config()', function () {
   );
 });
 
-describe('loadAsync', function () {
+describe('#async()', function () {
   it('loads a file from the base of project asynchronisly', function (done) {
     sqlload.async('./helloworld.sql', function(err, sql) {
       expect(sql).to.equal('select * from now();');
       done(err);
     });
-  }); 
+  });
+
+  it('asynchronisly loads file from config.basePath', function (done) {
+    var configObj = {
+      basePath: __dirname + '/fixtures/',
+      ext: '.txt'
+    };
+    sqlload.config(configObj);
+    sqlload.async('./sql/async', function(err, sql) {
+      expect(sql).to.equal('select * from ASYNC now();');
+      done(err);
+    });
+  });
 });
